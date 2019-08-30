@@ -17,6 +17,10 @@ export default {
   saveBook: function (bookData) {
     return axios.post("/api/books", bookData);
   },
+  // Saves a book to the database
+  saveUser: function (userData) {
+    return axios.post("/api/users", userData);
+  },
   //searches a book
   searchBook: function (bookTitle) {
     return axios.get(`https://newsapi.org/v2/everything?q=${bookTitle.title}&apiKey=4a77c85015524f0f96cc8601da0fe07b`);
