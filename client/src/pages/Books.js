@@ -107,9 +107,9 @@ class Books extends Component {
             return (
                   <Container fluid>
                         <Row>
-                              <Col size="md-6">
+                              <Col size="md-2">
                                     <Jumbotron>
-                                          <h1>Search API Here</h1>
+                                          <h1>Search FHIR API Here</h1>
                                     </Jumbotron>
                                     <form>
                                           <Input
@@ -124,100 +124,101 @@ class Books extends Component {
                                                 name="author"
                                                 placeholder="Author (required)"
                                           />
-                                          {/* <TextArea
-
-                onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
-              /> */}
                                           <FormBtn
                                                 disabled={!(this.state.title)}
                                                 onClick={this.handleBookSearch}
                                           >
                                                 Search Book
-              </FormBtn>
+                                          </FormBtn>
                                           <FormBtn
                                                 //disabled={!(this.state.title)}
                                                 onClick={this.showSomething}
                                           >
                                                 do something
-              </FormBtn>
+                                          </FormBtn>
                                     </form>
                               </Col>
-                              <Col size="md-6 sm-12">
-                                    <Jumbotron>
-                                          <h1>Books On My List</h1>
-                                    </Jumbotron>
-                                    {this.state.books.length ? (
-                                          <List>
-                                                {this.state.books.map(book => (
-                                                      <ListItem key={book._id}>
-                                                            <Link to={"/books/" + book._id}>
-                                                                  <strong>
-                                                                        {book.title} by {book.author}
-                                                                  </strong>
-                                                            </Link>
-                                                            <DeleteBtn onClick={() => this.deleteBook(book._id)} />
-                                                      </ListItem>
-                                                ))}
-                                          </List>
-                                    ) : (
-                                                <h3>No Results to Display</h3>
-                                          )}
-                              </Col>
-                        </Row>
-                        <Row>
-                              <Col size="md-12">
-                                    <Jumbotron>
-                                          <h1>API Results</h1>
-                                    </Jumbotron>
-                                    {/* need an API call to show here */}
-                                    <List>
-                                          {/* {this.state.somethingInTheState.map(somethingResult => ( */}
+                              <Col size="md-10">
+                                    <Row>
+                                          <Col size="md-12">
+                                                <Jumbotron>
+                                                      <h1>Books On My List</h1>
+                                                </Jumbotron>
+                                                {this.state.books.length ? (
+                                                      <List>
+                                                            {this.state.books.map(book => (
+                                                                  <ListItem key={book._id}>
+                                                                        <Link to={"/books/" + book._id}>
+                                                                              <strong>
+                                                                                    {book.title} by {book.author}
+                                                                              </strong>
+                                                                        </Link>
+                                                                        <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                                                                  </ListItem>
+                                                            ))}
+                                                      </List>
+                                                ) : (
+                                                            <h3>No Results to Display</h3>
+                                                      )}
+                                          </Col>
+                                    </Row>
+                                    <Row>
+                                          <Col size="md-12">
+                                                <Row>
+                                                      <Col size="md-6">
+                                                            <Jumbotron>
+                                                                  <h1>Raw Response</h1>
+                                                            </Jumbotron>
+                                                      </Col>
+                                                      <Col size="md-6">
+                                                            <Jumbotron>
+                                                                  <h1>Discreet Response</h1>
+                                                            </Jumbotron>
 
-                                          <ListItem key={this.state.somethingInTheState._id}>
-                                                <Link to={"/books/" + this.state.somethingInTheState._id}>
-                                                      <strong>
-                                                            {this.state.somethingInTheState} by {this.state.somethingInTheState}
-                                                      </strong>
-                                                </Link>
-                                                <DeleteBtn onClick={() => this.deleteBook(this.state.somethingInTheState._id)} />
-                                                <FormBtn
-                                                      //disabled={!(this.state.author && this.state.title)}
-                                                      onClick={(e) => this.handleFormSubmit(this.state.somethingInTheState, e)}
-                                                >
-                                                      Save Book
+                                                            <List>
+                                                                  <ListItem key={this.state.somethingInTheState._id}>
+                                                                        <Link to={"/books/" + this.state.somethingInTheState._id}>
+                                                                              <strong>
+                                                                                    {this.state.somethingInTheState} by {this.state.somethingInTheState}
+                                                                              </strong>
+                                                                        </Link>
+                                                                        <DeleteBtn onClick={() => this.deleteBook(this.state.somethingInTheState._id)} />
+                                                                        <FormBtn
+                                                                              onClick={(e) => this.handleFormSubmit(this.state.somethingInTheState, e)}
+                                                                        >
+                                                                              Save Book
                                     </FormBtn>
-                                          </ListItem>
-                                          {/* ) */}
-                                          )
-                                          }
-                                    </List>
-                                    {this.state.bookResults.length ? (
-                                          <List>
-                                                {this.state.bookResults.map(bookResult => (
-                                                      <ListItem key={bookResult._id}>
-                                                            <Link to={"/books/" + bookResult._id}>
-                                                                  <strong>
-                                                                        {bookResult.title} by {bookResult.author}
-                                                                  </strong>
-                                                            </Link>
-                                                            <DeleteBtn onClick={() => this.deleteBook(bookResult._id)} />
-                                                            <FormBtn
-                                                                  //disabled={!(this.state.author && this.state.title)}
-                                                                  onClick={(e) => this.handleFormSubmit(bookResult, e)}
-                                                            >
-                                                                  Save Book
-              </FormBtn>
-                                                      </ListItem>
-                                                ))}
-                                          </List>
-                                    ) : (
-                                                <h3>No Results to Display</h3>
-                                          )}
+                                                                  </ListItem>
+                                                            </List>
+                                                            {this.state.bookResults.length ? (
+                                                                  <List>
+                                                                        {this.state.bookResults.map(bookResult => (
+                                                                              <ListItem key={bookResult._id}>
+                                                                                    <Link to={"/books/" + bookResult._id}>
+                                                                                          <strong>
+                                                                                                {bookResult.title} by {bookResult.author}
+                                                                                          </strong>
+                                                                                    </Link>
+                                                                                    <DeleteBtn onClick={() => this.deleteBook(bookResult._id)} />
+                                                                                    <FormBtn
+                                                                                          //disabled={!(this.state.author && this.state.title)}
+                                                                                          onClick={(e) => this.handleFormSubmit(bookResult, e)}
+                                                                                    >
+                                                                                          Save Book
+                                                            </FormBtn>
+                                                                              </ListItem>
+                                                                        ))}
+                                                                  </List>
+                                                            ) : (
+                                                                        <h3>No Results to Display</h3>
+                                                                  )}
+                                                      </Col>
+                                                </Row>
+                                          </Col>
+                                    </Row>
                               </Col>
                         </Row>
-                  </Container>
+                  </Container >
             );
       }
 }

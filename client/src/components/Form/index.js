@@ -10,6 +10,13 @@ export function Input(props) {
   );
 }
 
+export function Checkbox(props) {
+  return (
+    //work
+    <div></div>
+  );
+}
+
 export function TextArea(props) {
   return (
     <div className="form-group">
