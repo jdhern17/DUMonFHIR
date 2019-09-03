@@ -5,9 +5,15 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import { Input, Checkbox, FormBtn } from "../components/Form";
+import { Form, Field } from 'react-final-form';
+//import Button from 'react-bootstrap/Button';
 //import Nav from "./components/Nav";
 
+const showResults = async values => {
+    //await sleep(500)
+    window.alert(JSON.stringify(values, undefined, 2));
+}
 
 class Books extends Component {
       state = {
@@ -18,7 +24,8 @@ class Books extends Component {
             author: "",
             synopsis: "",
             titleToSave: "",
-            authorToSave: ""
+            authorToSave: "",
+            checkboxes: []
       };
 
       componentDidMount() {
@@ -102,16 +109,71 @@ class Books extends Component {
 
       };
 
+      
 
       render() {
             return (
                   <Container fluid>
+                      <Row>
+                          <Col size="md-12">
+                              <Jumbotron>
+                                  <h1>Welcome to DUMonFHIR!</h1>
+                              </Jumbotron>
+                          </Col>
+                      </Row>
+                      <Row>
+                          <Col size="md-6">
+                              <Jumbotron>
+                                  <h2>What are FHIR and JSON?</h2>
+                              </Jumbotron>
+                          </Col>
+                          <Col size="md-6">
+                              <Jumbotron>
+                                  <h2>What does it look like?</h2>
+                              </Jumbotron>
+                              <Form onSubmit={showResults}>
+                                          {({handleSubmit, values}) => {
+                                    return <form onSubmit={handleSubmit}>
+                                        <div>
+                                            <label> First Name  </label>
+                                            <Field name="firstName" component="input" placeholder="First Name" validate={value => (value ? undefined : "Required")} />
+                                        </div>
+                                        <button type="submit">Submit</button>
+                                        <pre>{JSON.stringify(values, undefined, 2)}</pre>
+                                    </form>;
+                                }}
+                                    </Form>
+                          </Col>
+                      </Row>
                         <Row>
                               <Col size="md-2">
                                     <Jumbotron>
-                                          <h1>Search FHIR API Here</h1>
+                                          <h2>Search FHIR API</h2>
                                     </Jumbotron>
+                                    <h4>Summary Search</h4>
+                                   
                                     <form>
+                                          <Checkbox value="Given Name">
+                                                Given Name
+                                          </Checkbox>
+                                          <Checkbox>
+                                                Family Name
+                                          </Checkbox>
+                                          <Checkbox>
+                                                Phone Number
+                                          </Checkbox>
+                                          <Checkbox>
+                                                Gender
+                                          </Checkbox>
+                                          <Checkbox>
+                                                Birthdate
+                                          </Checkbox>
+                                          <FormBtn
+                                                //disabled={!(this.state.title)}
+                                                onClick={this.showSomething}
+                                          >
+                                                Summary Search
+                                          </FormBtn>
                                           <Input
                                                 value={this.state.title}
                                                 onChange={this.handleInputChange}
@@ -124,6 +186,7 @@ class Books extends Component {
                                                 name="author"
                                                 placeholder="Author (required)"
                                           />
+
                                           <FormBtn
                                                 disabled={!(this.state.title)}
                                                 onClick={this.handleBookSearch}
@@ -136,13 +199,14 @@ class Books extends Component {
                                           >
                                                 do something
                                           </FormBtn>
+
                                     </form>
                               </Col>
                               <Col size="md-10">
-                                    <Row>
+                                    {/* <Row>
                                           <Col size="md-12">
                                                 <Jumbotron>
-                                                      <h1>Books On My List</h1>
+                                                      <h1>Create your own JSON FHIR Message!</h1>
                                                 </Jumbotron>
                                                 {this.state.books.length ? (
                                                       <List>
@@ -161,18 +225,18 @@ class Books extends Component {
                                                             <h3>No Results to Display</h3>
                                                       )}
                                           </Col>
-                                    </Row>
+                                    </Row> */}
                                     <Row>
                                           <Col size="md-12">
                                                 <Row>
                                                       <Col size="md-6">
                                                             <Jumbotron>
-                                                                  <h1>Raw Response</h1>
+                                                                  <h2>Raw Response</h2>
                                                             </Jumbotron>
                                                       </Col>
                                                       <Col size="md-6">
                                                             <Jumbotron>
-                                                                  <h1>Discreet Response</h1>
+                                                                  <h2>Discreet Response</h2>
                                                             </Jumbotron>
 
                                                             <List>

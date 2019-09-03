@@ -12,8 +12,12 @@ export function Input(props) {
 
 export function Checkbox(props) {
   return (
-    //work
-    <div></div>
+    <div className="form-check">
+      <input className="form-check-input" type="checkbox" id="defaultCheck1" />
+      <label className="form-check-label" for="defaultCheck1">
+        {props.children}
+      </label>
+    </div>
   );
 }
 
@@ -27,7 +31,11 @@ export function TextArea(props) {
 
 export function FormBtn(props) {
   return (
-    <button {...props} style={{ float: "right", marginBottom: 10 }} className="btn btn-success">
+    <button
+      {...props}
+      style={{ float: "right", marginBottom: 10 }}
+      className="btn btn-success"
+    >
       {props.children}
     </button>
   );
