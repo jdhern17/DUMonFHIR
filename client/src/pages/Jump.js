@@ -37,7 +37,8 @@ class Jump extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
+          <Col size="md-2"></Col>
+          <Col size="md-8">
             <Jumbotron>
               <h1>Welcome to DUMonFHIR</h1>
             </Jumbotron>
