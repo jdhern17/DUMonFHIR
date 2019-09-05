@@ -129,7 +129,7 @@ class Books extends Component {
               <Link to={"../"}>Next</Link>
             </FormBtn>
             <FormBtn>
-              <Link to={"../Books"}>Back</Link>
+              <Link to={"../Quizpage"}>Back</Link>
             </FormBtn>
           </div>
         </Row>
@@ -358,7 +358,7 @@ class Books extends Component {
                   </Col>
                   <Col size="md-6">
                     <Jumbotron>
-                      <h4>FHIR Response</h4>
+                      <h4>Full FHIR Response</h4>
                     </Jumbotron>
 
                     {this.state.somethingInTheState.length ? (

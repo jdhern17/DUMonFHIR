@@ -5,6 +5,7 @@ import Books from "./pages/Books";
 import Searchers from "./pages/Searchers";
 import WhatIsDoF from "./pages/WhatIsDoF";
 import WhatIsSoF from "./pages/WhatIsSoF";
+import Quizpage from "./pages/Quizpage";
 
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/" component={Jump} />
           <Route exact path="/books" component={Books} />
           <Route exact path="/Searchers" component={Searchers} />
+          <Route exact path="/Quizpage" component={Quizpage} />
           <Route exact path="/WhatIsDoF" component={WhatIsDoF} />
           <Route exact path="/WhatIsSoF" component={WhatIsSoF} />
           <Route exact path="/books/:id" component={Detail} />
