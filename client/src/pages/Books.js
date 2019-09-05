@@ -137,7 +137,7 @@ class Books extends Component {
           <Col size="md-2"></Col>
           <Col size="md-4">
             <Jumbotron>
-              <h4>What are FHIR and JSON?</h4>
+              <h3>What are FHIR and JSON?</h3>
             </Jumbotron>
             <p>
               FHIR stands for Fast Healthcare Interoperability Resources and is
@@ -152,7 +152,7 @@ class Books extends Component {
           </Col>
           <Col size="md-4">
             <Jumbotron>
-              <h4>Build a JSON interface message!</h4>
+              <h3>Build a JSON interface message!</h3>
             </Jumbotron>
             <Form onSubmit={this.showResults}>
               {({ handleSubmit, values }) => {

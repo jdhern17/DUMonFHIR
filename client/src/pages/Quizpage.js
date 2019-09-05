@@ -140,7 +140,7 @@ class Books extends Component {
           <Col size="md-4"></Col>
           <Col size="md-4">
             <Jumbotron>
-              <h4>Interface Knowledge Assessment!</h4>
+              <h3>Put your interface knowledge to the test!</h3>
             </Jumbotron>
             <Quiz quiz={quiz} />
           </Col>

@@ -137,9 +137,9 @@ class Books extends Component {
           <Col size="md-2"></Col>
           <Col size="md-2">
             <Jumbotron>
-              <h4>Search FHIR API</h4>
+              <h3>Search FHIR API</h3>
             </Jumbotron>
-            <h4>Summary Search</h4>
+            <h3>Summary Search</h3>
             <form>
               <Form onSubmit={this.showResults}>
                 {({ handleSubmit, values }) => {
@@ -255,7 +255,7 @@ class Books extends Component {
                 <Row>
                   <Col size="md-6">
                     <Jumbotron>
-                      <h4>Discreet Response</h4>
+                      <h3>Discreet Response</h3>
                     </Jumbotron>
                     {this.state.somethingInTheState.length ? (
                       <List>
@@ -358,7 +358,7 @@ class Books extends Component {
                   </Col>
                   <Col size="md-6">
                     <Jumbotron>
-                      <h4>Full FHIR Response</h4>
+                      <h3>Full FHIR Response</h3>
                     </Jumbotron>
 
                     {this.state.somethingInTheState.length ? (
