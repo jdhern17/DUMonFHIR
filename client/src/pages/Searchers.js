@@ -129,7 +129,7 @@ class Books extends Component {
               <Link to={"../"}>Next</Link>
             </FormBtn>
             <FormBtn>
-              <Link to={"../Quizpage"}>Back</Link>
+              <Link to={"../Books"}>Back</Link>
             </FormBtn>
           </div>
         </Row>

@@ -126,10 +126,10 @@ class Books extends Component {
         <Row>
           <div className="mx-auto">
             <FormBtn>
-              <Link to={"../Quizpage"}>Next</Link>
+              <Link to={"../Searchers"}>Next</Link>
             </FormBtn>
             <FormBtn>
-              <Link to={"../"}>Back</Link>
+              <Link to={"../Quizpage"}>Back</Link>
             </FormBtn>
           </div>
         </Row>

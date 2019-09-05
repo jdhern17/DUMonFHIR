@@ -61,7 +61,7 @@ class Jump extends Component {
                 placeholder="email (required)"
               />
               <FormBtn onClick={this.handleUserGo}>
-                <Link to={"/books"} disabled={!this.state.email}>
+                <Link to={"/Quizpage"} disabled={!this.state.email}>
                   GO!
                 </Link>
               </FormBtn>
