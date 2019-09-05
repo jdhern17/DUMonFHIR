@@ -137,12 +137,22 @@ class Books extends Component {
           <Col size="md-2"></Col>
           <Col size="md-4">
             <Jumbotron>
-              <h2>What are FHIR and JSON?</h2>
+              <h4>What are FHIR and JSON?</h4>
             </Jumbotron>
+            <p>
+              FHIR stands for Fast Healthcare Interoperability Resources and is
+              an interface messaging standard published in 2014 as a way to push
+              healthcare towards RESTful architectures that leveraged the latest
+              web standards such as JSON, HTTP, OAuth and REST.
+            </p>
+            <p>
+              JSON is the preferred messaging format for FHIR which would
+              replace message formats such as HL7v2 and HL7v3/CCDA.
+            </p>
           </Col>
           <Col size="md-4">
             <Jumbotron>
-              <h2>Design your own FHIR-Adherent interface message!</h2>
+              <h4>Build a JSON interface message!</h4>
             </Jumbotron>
             <Form onSubmit={this.showResults}>
               {({ handleSubmit, values }) => {

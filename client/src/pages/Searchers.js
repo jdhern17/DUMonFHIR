@@ -100,7 +100,7 @@ class Books extends Component {
   // };
 
   showResults = values => {
-    window.alert(JSON.stringify(values, undefined, 2));
+    //window.alert(JSON.stringify(values, undefined, 2));
     console.log(values);
     this.setState({
       searchValues: values
@@ -137,7 +137,7 @@ class Books extends Component {
           <Col size="md-2"></Col>
           <Col size="md-2">
             <Jumbotron>
-              <h2>Search FHIR API</h2>
+              <h4>Search FHIR API</h4>
             </Jumbotron>
             <h4>Summary Search</h4>
             <form>
@@ -255,7 +255,7 @@ class Books extends Component {
                 <Row>
                   <Col size="md-6">
                     <Jumbotron>
-                      <h2>Discreet Response</h2>
+                      <h4>Discreet Response</h4>
                     </Jumbotron>
                     {this.state.somethingInTheState.length ? (
                       <List>
@@ -358,7 +358,7 @@ class Books extends Component {
                   </Col>
                   <Col size="md-6">
                     <Jumbotron>
-                      <h2>Raw Response</h2>
+                      <h4>FHIR Response</h4>
                     </Jumbotron>
 
                     {this.state.somethingInTheState.length ? (
