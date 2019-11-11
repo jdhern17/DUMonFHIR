@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import DeleteBtn from "../components/DeleteBtn";
+//import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { Input, Checkbox, FormBtn, TextArea } from "../components/Form";
+//import { Input, Checkbox, FormBtn, TextArea } from "../components/Form";
+import { FormBtn } from "../components/Form";
 import { Form, Field } from "react-final-form";
 //import Button from 'react-bootstrap/Button';
 //import Nav from "./components/Nav";
