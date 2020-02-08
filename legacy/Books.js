@@ -1,24 +1,43 @@
 import React, { Component } from "react";
+//import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
+//import { List, ListItem } from "../components/List";
+//import { Input, Checkbox, FormBtn, TextArea } from "../components/Form";
 import { FormBtn } from "../components/Form";
 import { Form, Field } from "react-final-form";
+//import Button from 'react-bootstrap/Button';
+//import Nav from "./components/Nav";
 
 class Books extends Component {
   state = {
     //books: [],
-    //bookResults: [],
+    bookResults: [],
     somethingInTheState: [],
     //title: "",
     //author: "",
     //synopsis: "",
-    //titleToSave: "",
-    //authorToSave: "",
-    //checkboxes: [],
+    titleToSave: "",
+    authorToSave: "",
+    checkboxes: [],
     searchValues: {}
   };
+
+  // POTENTIAL LEGACY CODE
+  // LOADBOOKS MAY NOT USE CURRENT DB
+  // componentDidMount() {
+  //   this.loadBooks();
+  // }
+
+  // POTENTIAL LEGACY CODE
+  // NO DELETE FUNCTION CURRENTLY ON THIS PAGE
+  // deleteBook = id => {
+  //   API.deleteBook(id)
+  //     .then(res => this.loadBooks())
+  //     .catch(err => console.log(err));
+  // };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -45,11 +64,53 @@ class Books extends Component {
     }
   };
 
+  // POTENTIAL LEGACY CODE
+  // GETBOOKS TIES BACK TO AXIOS GETBOOKS CALL TO API/GETBOOKS
+  // loadBooks = () => {
+  //   API.getBooks()
+  //     .then(res =>
+  //       // clears the visible form fields
+  //       this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+  //     )
+  //     .catch(err => console.log(err));
+  // };
+
+  // POTENTIAL LEGACY CODE
+  // HANDLEBOOKSEARCH IS NOT USED HERE
+  // handleBookSearch = event => {
+  //   event.preventDefault();
+  //   if (this.state.title) {
+  //     API.searchBook({
+  //       title: this.state.title
+  //     })
+  //       .then(res => this.loadBookResults(res))
+  //       .catch(err => console.log(err));
+  //   }
+  // };
+
+  // POTENTIAL LEGACY CODE
+  // NO BOOKS ARE BEING STATED
+  // loadBookResults = res => {
+  //   this.setState({
+  //     bookResults: res.data.articles,
+  //     title: "",
+  //     author: "",
+  //     synopsis: ""
+  //   });
+  // };
+
   actuallyShowSomethingUI = res => {
     this.setState({
       somethingInTheState: res.data.entry
     });
   };
+
+  // POTENTIAL LEGACY CODE
+  // NOT SURE WHAT IT IS DOING
+  //      somethingInTheState: res.data.entry[0].resource.address[0].city
+
+  // showSomething = event => {
+  // };
 
   showResults = values => {
     window.alert(JSON.stringify(values, undefined, 2));
