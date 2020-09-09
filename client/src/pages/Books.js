@@ -8,15 +8,7 @@ import { Form, Field } from "react-final-form";
 
 class Books extends Component {
   state = {
-    //books: [],
-    //bookResults: [],
     somethingInTheState: [],
-    //title: "",
-    //author: "",
-    //synopsis: "",
-    //titleToSave: "",
-    //authorToSave: "",
-    //checkboxes: [],
     searchValues: {}
   };
 
@@ -25,24 +17,6 @@ class Books extends Component {
     this.setState({
       [name]: value
     });
-  };
-
-  handleFormSubmit = (bookResult, event) => {
-    event.preventDefault();
-    // this.setState({
-    // 	titleToSave: bookResult.title,
-    // 	authorToSave: bookResult.author
-    // })
-
-    if (bookResult.title && bookResult.author) {
-      // only saves the title author and synopsis fields to send
-      API.saveBook({
-        title: bookResult.title,
-        author: bookResult.author
-      })
-        .then(res => this.loadBooks())
-        .catch(err => console.log(err));
-    }
   };
 
   actuallyShowSomethingUI = res => {
