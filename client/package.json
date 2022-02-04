@@ -6,6 +6,7 @@
   "dependencies": {
     "axios": "^0.21.4",
     "final-form": "^4.20.6",
+    "npm": "^8.4.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-final-form": "^6.5.8",
